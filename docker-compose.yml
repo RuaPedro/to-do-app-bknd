@@ -3,11 +3,11 @@ services:
     image: postgres:16-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_DB: tasksbd
+      POSTGRES_DB: tasks
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: pedroRua
+      POSTGRES_PASSWORD: postgres
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d tasksbd"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tasks"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -22,8 +22,11 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    networks:
+      - default
+      - red-compartida-global
     environment:
-      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/tasksbd
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/tasks
       DEBUG: "True"
     ports:
       - "8000:8000"
@@ -35,3 +38,8 @@ services:
 
 volumes:
   postgres_data:
+
+networks:
+  red-compartida-global:
+    name: red-compartida-global
+    external: true

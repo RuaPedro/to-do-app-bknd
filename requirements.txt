@@ -1,5 +1,12 @@
 asgiref==3.11.1
 django==6.0.5
+django-cors-headers==4.9.0
 django-environ==0.13.0
+django-prometheus==2.5.0
 djangorestframework==3.17.1
+environ==1.0
+prometheus-client==0.25.0
+psycopg==3.3.4
+psycopg-binary==3.3.4
 sqlparse==0.5.5
+typing-extensions==4.15.0
