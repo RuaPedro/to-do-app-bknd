@@ -10,3 +10,7 @@ exclude =
     dist
 ignore = E203, W503
 max-complexity = 10
+per-file-ignores =
+    core/settings.py: E501
+    tasks/admin.py: F401
+    tasks/tests.py: F401
