@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.urls import include, path
 from rest_framework import routers
 
-from tasks.views import TaskViewSet, SubTaskViewSet, CommentViewSet
+from tasks.views import CommentViewSet, SubTaskViewSet, TaskViewSet
 
 router = routers.DefaultRouter()
 router.register(r"tasks", TaskViewSet)

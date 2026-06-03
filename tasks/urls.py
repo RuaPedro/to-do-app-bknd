@@ -1,5 +1,6 @@
 from rest_framework.routers import DefaultRouter
-from .views import TaskViewSet, SubTaskViewSet, CommentViewSet
+
+from .views import CommentViewSet, SubTaskViewSet, TaskViewSet
 
 router = DefaultRouter()
 router.register(r'tasks', TaskViewSet)
